@@ -40,7 +40,7 @@
           </ul>
         </li>
         <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Data User
