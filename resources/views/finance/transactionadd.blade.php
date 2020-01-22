@@ -115,7 +115,7 @@
                         <h4>Recent Activity</h4>
                           <div class="post">
                             <div class="user-block">
-                              <img class="img-circle img-bordered-sm" src="{{asset('backend/dist/img/user1-128x128.')}}" alt="user image">
+                              <img class="img-circle img-bordered-sm" src="{{asset('backend/dist/img/user1-128x128.jpg')}}" alt="user image">
                               <span class="username">
                                 <a href="#">Jonathan Burke Jr.</a>
                               </span>
