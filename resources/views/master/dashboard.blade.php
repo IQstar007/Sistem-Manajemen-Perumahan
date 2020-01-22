@@ -26,9 +26,9 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{URL::to('/productadd')}}" class="nav-link">
+              <a href="{{URL::to('/categorylist')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Tambah Rumah</p>
+                <p>List Kategori Rumah</p>
               </a>
             </li>
             <li class="nav-item">
@@ -48,12 +48,6 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{URL::to('/useradd')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Tambah User</p>
-              </a>
-            </li>
             <li class="nav-item">
               <a href="{{URL::to('/userlist')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>

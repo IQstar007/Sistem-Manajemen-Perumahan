@@ -16,55 +16,30 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Data Rumah
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{URL::to('/categorylist')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>List Kategori Rumah</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{URL::to('/productlist')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>List Rumah</p>
-              </a>
-            </li>
-          </ul>
-        </li>
         <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Data User
+              Data Transaksi
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{URL::to('/userlist')}}" class="nav-link active">
+              <a href="{{URL::to('/transactionlist')}}" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
-                <p>List User</p>
+                <p>Pembayaran</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{URL::to('/transactionstage')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Tahapan Transaksi</p>
               </a>
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a href="{{URL::to('/financialreport')}}" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Laporan Keuangan
-              <span class="right badge badge-danger">New</span>
-            </p>
-          </a>
-        </li>
+
 
       </ul>
     </nav>
@@ -78,13 +53,13 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Edit User</h1>
+              <h1>Edit Data Customer</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{URL::to('/homemaster')}}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{URL::to('/userlist')}}">List User</a></li>
-                <li class="breadcrumb-item active">Edit User</li>
+                <li class="breadcrumb-item"><a href="{{URL::to('/transactionlist')}}">List Data Customer</a></li>
+                <li class="breadcrumb-item active">Edit Data Customer</li>
               </ol>
             </div>
           </div>
@@ -98,79 +73,107 @@
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
-              <div class="card card-success">
+              <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Form Edit User</h3>
+                  <h3 class="card-title">Form Edit Data Customer</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form role="form">
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Akun</i></h3><small class="text-danger float-right">*Wajib Diisi</small>
-                  </div>
-
                   <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Username</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username" required>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password" required>
-                        </div>
-                      </div>
-
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nama Lengkap</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Lengkap">
                     </div>
                     <div class="form-group">
-                    <label>Bagian</label>
-                    <div class="select2-purple">
-                      <select class="select2" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                        <option>Keuangan</option>
-                        <option>Marketing</option>
+                      <label>Tanggal Lahir</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        </div>
+                        <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Jenis Kelamin</label>
+                      <select class="form-control select2 select2-warning" data-dropdown-css-class="select2-warning" style="width: 100%;">
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
                       </select>
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">No Hp</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan No Hp">
                     </div>
-
-
-
-
-                  </div>
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Data Diri</i></h3><small class="text-danger float-right">*Tidak Wajib Diisi</small>
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Lengkap</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Lengkap">
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <textarea class="form-control" rows="3" placeholder="Masukkan Alamat..."></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Blok Rumah</label>
+                      <select class="form-control select2 select2-success" data-dropdown-css-class="select2-success" style="width: 100%;">
+                        <option selected="selected">Alabama</option>
+                        <option>Alaska</option>
+                        <option>California</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Harga Rumah</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">Rp.</span>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Email">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No Hp</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan No Hp">
-                        </div>
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea class="form-control" rows="3" placeholder="Masukkan Alamat..."></textarea>
-                        </div>
+                        <input type="text" class="form-control">
                       </div>
                     </div>
+                    <div class="form-group">
+                    <label>Tipe DP Rumah</label>
+                      <select class="form-control select2bs4" style="width: 100%;">
+                        <option>Presentase</option>
+                        <option>Nominal</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>DP Rumah yang dibayar</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">Rp.</span>
+                        </div>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Harga Booking Rumah</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">Rp.</span>
+                        </div>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <?php
+                    // $tglt=date('d-m-Y', strtotime($edit_transaksi->tgl_transaksi_pembayaran));
+                    // $tgltdb=date('Y-m-d', strtotime($edit_transaksi->tgl_transaksi_pembayaran));
+                    $tgl=date('d-m-Y');
+                    $tgldb=date('Y-m-d');
+                    ?>
+
+                      <div class="form-group">
+                        <label for="password">Tanggal Transaksi</label>
+                        {{-- <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span> --}}
+                        <input type="text" name="tgl" class="form-control" value="{{$tgl}}" disabled>
+                        {{-- <input type="hidden" name="tgldb" class="form-control" value="{{$tgldb}}" > --}}
+                      </div>
 
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-success float-right">Simpan</button>
+                    <button type="submit" class="btn btn-info">Submit</button>
                   </div>
                 </form>
               </div>
@@ -232,7 +235,7 @@
       })
 
       //Datemask dd/mm/yyyy
-      $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+      $('#datemask').inputmask('dd-mm-yyyy', { 'placeholder': 'dd-mm-yyyy' })
       //Datemask2 mm/dd/yyyy
       $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
       //Money Euro

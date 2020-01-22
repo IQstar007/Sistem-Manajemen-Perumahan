@@ -28,7 +28,7 @@
             <li class="nav-item">
               <a href="{{URL::to('/transactionlist')}}" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
-                <p>List Transaksi</p>
+                <p>Pembayaran</p>
               </a>
             </li>
             <li class="nav-item">
@@ -54,12 +54,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>List Transaksi</h1>
+            <h1>Pembayaran</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{URL::to('/homefinance')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">List Transaksi</li>
+              <li class="breadcrumb-item active">Pembayaran</li>
             </ol>
           </div>
         </div>
@@ -70,46 +70,89 @@
     <section class="content">
       <div class="row">
         <div class="col-12">
+                  <div class="card card-warning">
+                        <div class="card-header">
+                          <h3 class="card-title">Filter List Transaksi</h3>
+                        </div>
+                        <form class="" action="index.html" method="post">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-9">
+                              <div class="form-group">
+                                <label>Date range:</label>
 
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                      <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                  </div>
+                                  <input type="text" class="form-control float-right" id="reservation">
+                                </div>
+                                <!-- /.input group -->
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label for="">&nbsp;</label>
+                                <div class="input-group">
+                                  <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i>&nbsp;Cari</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                        <!-- /.card-body -->
+                      </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+        </div>
+
+
+        <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Kumpulan Data Transaksi</h3>
+              <h3 class="card-title">List Data Transaksi</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>No</th>
+                  <th>Tanggal&nbsp;Transaksi</th>
+                  <th>Nama</th>
+                  <th>Blok&nbsp;Rumah</th>
+                  <th>DP&nbsp;Blok/Kavling</th>
+                  <th>DP&nbsp;yang&nbsp;Dibayar</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td data-toggle="modal" data-target="#modal-lg">Trident</td>
-                  <td data-toggle="modal" data-target="#modal-lg">Internet Explorer 4.0</td>
-                  <td data-toggle="modal" data-target="#modal-lg">Win 95+</td>
-                  <td data-toggle="modal" data-target="#modal-lg"> 4</td>
-                  <td data-toggle="modal" data-target="#modal-lg">X</td>
+                  <td data-toggle="modal" data-target="#modal-lg">1</td>
+                  <td data-toggle="modal" data-target="#modal-lg">12-12-2019</td>
+                  <td data-toggle="modal" data-target="#modal-lg">Clara</td>
+                  <td data-toggle="modal" data-target="#modal-lg">A12</td>
+                  <td data-toggle="modal" data-target="#modal-lg">Rp.1.000.000</td>
+                  <td data-toggle="modal" data-target="#modal-lg">Rp.20.000.000</td>
                   <td class="project-actions text-center">
-                      <a class="btn btn-primary btn-sm" href="#">
-                          <i class="fas fa-folder">
-                          </i>
-                          View
-                      </a>&nbsp;
-                      <a class="btn btn-info btn-sm" href="#">
+                      <a class="btn btn-success btn-md" data-toggle1="tooltip" data-placement="bottom" title="Tambah Transaksi" href="{{URL::to('/transactionadd')}}">
+                          <i class="fas fa-plus"></i>
+                      </a>
+                      <a class="btn btn-info btn-md" data-toggle1="tooltip" data-placement="bottom" title="Edit" href="{{URL::to('/transactionedit')}}">
                           <i class="fas fa-pencil-alt">
                           </i>
-                          Edit
-                      </a>&nbsp;
-                      <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#modal-default">
+                      </a>
+                      <a class="btn btn-primary btn-md" data-toggle1="tooltip" data-placement="bottom" title="Bukti Pembayaran" href="{{URL::to('/transactionedit')}}">
+                          <i class="fas fa-print">
+                          </i>
+                      </a>
+                      <a class="btn btn-danger btn-md" href="#" data-toggle1="tooltip" data-placement="bottom" title="Hapus" data-toggle="modal" data-target="#modal-default">
                           <i class="fas fa-trash">
                           </i>
-                          Delete
                       </a>
                   </td>
 
@@ -127,7 +170,7 @@
                         </div>
                         <div class="modal-footer justify-content-between">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
+                          <button type="button" class="btn btn-danger">Hapus</button>
                         </div>
                       </div>
                       <!-- /.modal-content -->
@@ -140,17 +183,41 @@
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h4 class="modal-title">Detail Transaksi</h4>
+                          <h4 class="modal-title">Detail Data Customer</h4>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                          <p>One fine body&hellip;</p>
+                          <p><b>No :</b> 1</p>
+                          <p><b>Nama Lengkap :</b> Clara</p>
+                          <p><b>Tanggal Lahir :</b> 12-12-1986</p>
+                          <p><b>Jenis Kelamin :</b> Laki-laki</p>
+                          <p><b>No Hp :</b> 08475374858</p>
+                          <p><b>Alamat :</b> New Jersey,USA</p>
+                          <p><b>Blok Rumah :</b> A12</p>
+                          <p><b>Kategori Rumah :</b> Rumah Cluster</p>
+                          <p><b>Spek Rumah :</b> Luas tanah 400x800, Kamar ada 6 ditambah 2 kamar mandi, ada ruang tamu dan tempat makan</p>
+                          <p><b>Harga Rumah :</b> Rp.120.000.000</p>
+                          <p><b>Tipe DP Rumah :</b> Nominal</p>
+                          <p><b>DP yang dibayar :</b> Rp.1.000.000</p>
+                          <p><b>Harga Booking Rumah :</b> Rp.1.000.000</p>
+                          <p><b>Tanggal Transaksi :</b> 12-12-2019</p>
+                          <hr>
+                          <p><b>Marketing :</b> Erena</p>
+                          <hr>
+                          <h5>*Berkas - berkas</h5>
+                          <p><b>KTP :</b> Sudah</p>
+                          <p><b>KK :</b> Sudah</p>
+                          <p><b>Foto :</b> Sudah</p>
+                          <p><b>Surat Nikah :</b> Sudah</p>
+                          <p><b>NPWP :</b> Sudah</p>
+                          <hr>
+                          <p><b>Diubah Oleh :</b> Shin</p>
+                          <p><b>Pada Tanggal :</b> 05-01-2029</p>
                         </div>
                         <div class="modal-footer justify-content-between">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
                         </div>
                       </div>
                       <!-- /.modal-content -->
@@ -163,11 +230,12 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>No</th>
+                  <th>Tanggal&nbsp;Transaksi</th>
+                  <th>Nama</th>
+                  <th>Blok&nbsp;Rumah</th>
+                  <th>DP&nbsp;Blok/Kavling</th>
+                  <th>DP&nbsp;yang&nbsp;Dibayar</th>
                   <th>Aksi</th>
                 </tr>
                 </tfoot>
@@ -212,4 +280,11 @@
     });
   });
 </script>
+<script>
+
+		$(function () {
+			$('[data-toggle1="tooltip"]').tooltip();
+		});
+
+	</script>
 @endsection

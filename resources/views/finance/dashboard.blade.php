@@ -28,7 +28,7 @@
             <li class="nav-item">
               <a href="{{URL::to('/transactionlist')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>List Transaksi</p>
+                <p>Pembayaran</p>
               </a>
             </li>
             <li class="nav-item">

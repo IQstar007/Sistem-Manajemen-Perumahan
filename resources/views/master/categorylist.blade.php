@@ -26,13 +26,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{URL::to('/categorylist')}}" class="nav-link">
+              <a href="{{URL::to('/categorylist')}}" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List Kategori Rumah</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{URL::to('/productlist')}}" class="nav-link active">
+              <a href="{{URL::to('/productlist')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List Rumah</p>
               </a>
@@ -78,12 +78,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>List Rumah</h1>
+              <h1>List Kategori</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{URL::to('/homemaster')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active">List Rumah</li>
+                <li class="breadcrumb-item active">List Kategori</li>
               </ol>
             </div>
           </div>
@@ -97,9 +97,9 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Kumpulan Data Rumah</h3>
-                <a class="btn btn-outline-success btn-sm float-right" href="{{URL::to('/productadd')}}">
-                    <i class="fas fa-plus"></i>&nbsp;Tambah Rumah
+                <h3 class="card-title">Kumpulan Data Kategori</h3>
+                <a class="btn btn-outline-success btn-sm float-right" href="{{URL::to('/categoryadd')}}">
+                    <i class="fas fa-plus"></i>&nbsp;Tambah Kategori
                 </a>
               </div>
               <!-- /.card-header -->
@@ -108,20 +108,24 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Blok&nbsp;Rumah</th>
+                    <th>Gambar&nbsp;Rumah</th>
                     <th>Kategori&nbsp;Rumah</th>
-                    <th>Harga</th>
+                    <th>Deskripsi&nbsp;Kategori&nbsp;Rumah</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <td data-toggle="modal" data-target="#modal-lg">1</td>
-                    <td data-toggle="modal" data-target="#modal-lg">A12</td>
-                    <td data-toggle="modal" data-target="#modal-lg">Rumah Cluster</td>
-                    <td align="right" data-toggle="modal" data-target="#modal-lg">Rp.120.000.00</td>
-                    <td class="project-actions text-center">
-                        <a class="btn btn-info btn-md" href="{{URL::to('/productedit')}}">
+                    <td  style="vertical-align:middle" data-toggle="modal" data-target="#modal-lg">1</td>
+                    <td  align="center">
+                    <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                      <img src="https://via.placeholder.com/300/FFFFFF?text=1" class="img-fluid mb-2" alt="white sample" style="height: 100px;"/>
+                    </a>
+                    </td>
+                    <td  style="vertical-align:middle" data-toggle="modal" data-target="#modal-lg">A12</td>
+                    <td  style="vertical-align:middle" data-toggle="modal" data-target="#modal-lg">Rumah Cluster</td>
+                    <td class="project-actions text-center"  style="vertical-align:middle">
+                        <a class="btn btn-info btn-md" href="{{URL::to('/categoryedit')}}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
@@ -156,7 +160,7 @@
                     </div>
                     <!-- /.modal -->
 
-                    <div class="modal fade" id="modal-lg">
+                    {{-- <div class="modal fade" id="modal-lg">
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -183,16 +187,16 @@
                       </div>
                       <!-- /.modal-dialog -->
                     </div>
-                    <!-- /.modal -->
+                    <!-- /.modal --> --}}
 
                   </tr>
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Blok&nbsp;Rumah</th>
                     <th>Kategori&nbsp;Rumah</th>
-                    <th>Harga</th>
+                    <th>Deskripsi&nbsp;Kategori&nbsp;Rumah</th>
+                    <th>Gambar&nbsp;Rumah</th>
                     <th>Aksi</th>
                   </tr>
                   </tfoot>
@@ -235,5 +239,28 @@
       "autoWidth": false,
     });
   });
+</script>
+<!-- jQuery UI -->
+<script src="{{asset('backend/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<!-- Ekko Lightbox -->
+<script src="{{asset('backend/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+<!-- Filterizr-->
+<script src="{{asset('backend/plugins/filterizr/jquery.filterizr.min.js')}}"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
 </script>
 @endsection

@@ -16,8 +16,8 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+        <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Data Rumah
@@ -26,7 +26,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{URL::to('/categorylist')}}" class="nav-link">
+              <a href="{{URL::to('/categorylist')}}" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List Kategori Rumah</p>
               </a>
@@ -39,8 +39,8 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link active">
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Data User
@@ -49,7 +49,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{URL::to('/userlist')}}" class="nav-link active">
+              <a href="{{URL::to('/userlist')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List User</p>
               </a>
@@ -78,13 +78,13 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Edit User</h1>
+              <h1>Tambah Kategori Rumah</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{URL::to('/homemaster')}}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{URL::to('/userlist')}}">List User</a></li>
-                <li class="breadcrumb-item active">Edit User</li>
+                <li class="breadcrumb-item"><a href="{{URL::to('/categorylist')}}">List Kategori Rumah</a></li>
+                <li class="breadcrumb-item active">Tambah Kategori Rumah</li>
               </ol>
             </div>
           </div>
@@ -100,77 +100,50 @@
               <!-- general form elements -->
               <div class="card card-success">
                 <div class="card-header">
-                  <h3 class="card-title">Form Edit User</h3>
+                  <h3 class="card-title">Form Tambah Kategori Rumah</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form role="form">
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Akun</i></h3><small class="text-danger float-right">*Wajib Diisi</small>
-                  </div>
-
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Username</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username" required>
+                          <label for="exampleInputEmail1">Nama Kategori Rumah</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Blok Rumah">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password" required>
+                          <label for="exampleInputPassword1">Kode Kategori Rumah</label>
+                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kode/Inisial Rumah">
                         </div>
                       </div>
 
-                    </div>
-                    <div class="form-group">
-                    <label>Bagian</label>
-                    <div class="select2-purple">
-                      <select class="select2" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                        <option>Keuangan</option>
-                        <option>Marketing</option>
-                      </select>
-                    </div>
-                    </div>
-
-
-
-
-                  </div>
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Data Diri</i></h3><small class="text-danger float-right">*Tidak Wajib Diisi</small>
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Lengkap</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Lengkap">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Email">
+                            <label>Deskripsi Kategori Rumah</label>
+                            <textarea class="form-control" rows="13" placeholder="Masukkan Spesifikasi..."></textarea>
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No Hp</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan No Hp">
-                        </div>
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea class="form-control" rows="3" placeholder="Masukkan Alamat..."></textarea>
-                        </div>
+                          <div class="form-group">
+                          <label for="exampleInputFile">Gambar Kategori Rumah</label><br>
+                          <img class="img-fluid" src="{{asset('backend/dist/img/photo3.jpg')}}" alt="Photo" style="height: 270px;">
+                          </div>
+                          <div class="form-group">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="exampleInputFile">
+                              <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                            </div>
+                          </div>
                       </div>
                     </div>
-
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-success float-right">Simpan</button>
+                    <button type="submit" class="btn btn-success float-right">Submit</button>
                   </div>
                 </form>
               </div>

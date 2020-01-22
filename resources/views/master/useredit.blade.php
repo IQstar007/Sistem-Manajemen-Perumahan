@@ -32,7 +32,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{URL::to('/productlist')}}" class="nav-link">
+              <a href="{{URL::to('/productlist')}}" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List Rumah</p>
               </a>
@@ -98,32 +98,21 @@
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
-              <div class="card card-success">
+              <div class="card card-info">
                 <div class="card-header">
                   <h3 class="card-title">Form Edit User</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form role="form">
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Akun</i></h3><small class="text-danger float-right">*Wajib Diisi</small>
-                  </div>
-
                   <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Username</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username" required>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password" required>
-                        </div>
-                      </div>
-
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password" required>
                     </div>
                     <div class="form-group">
                     <label>Bagian</label>
@@ -135,42 +124,11 @@
                     </div>
                     </div>
 
-
-
-
-                  </div>
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Data Diri</i></h3><small class="text-danger float-right">*Tidak Wajib Diisi</small>
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Lengkap</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Lengkap">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Email">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No Hp</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan No Hp">
-                        </div>
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea class="form-control" rows="3" placeholder="Masukkan Alamat..."></textarea>
-                        </div>
-                      </div>
-                    </div>
-
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-success float-right">Simpan</button>
+                    <button type="submit" class="btn btn-info">Simpan</button>
                   </div>
                 </form>
               </div>

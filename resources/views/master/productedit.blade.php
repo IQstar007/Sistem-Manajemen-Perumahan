@@ -16,8 +16,8 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+        <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Data Rumah
@@ -32,15 +32,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{URL::to('/productlist')}}" class="nav-link">
+              <a href="{{URL::to('/productlist')}}" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List Rumah</p>
               </a>
             </li>
           </ul>
         </li>
-        <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link active">
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Data User
@@ -49,7 +49,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{URL::to('/userlist')}}" class="nav-link active">
+              <a href="{{URL::to('/userlist')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List User</p>
               </a>
@@ -78,13 +78,13 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Edit User</h1>
+              <h1>Edit Rumah</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{URL::to('/homemaster')}}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{URL::to('/userlist')}}">List User</a></li>
-                <li class="breadcrumb-item active">Edit User</li>
+                <li class="breadcrumb-item"><a href="{{URL::to('/productlist')}}">List Rumah</a></li>
+                <li class="breadcrumb-item active">Edit Rumah</li>
               </ol>
             </div>
           </div>
@@ -98,79 +98,80 @@
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
-              <div class="card card-success">
+              <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Form Edit User</h3>
+                  <h3 class="card-title">Form Edit Rumah</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form role="form">
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Akun</i></h3><small class="text-danger float-right">*Wajib Diisi</small>
-                  </div>
-
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Username</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username" required>
+                          <label for="exampleInputEmail1">Blok Rumah</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Blok Rumah">
+                        </div>
+                        <div class="form-group">
+                        <label>Kategori Rumah</label>
+                        <div class="select2-purple">
+                          <select class="select2" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                          </select>
+                        </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password" required>
+                          <label for="exampleInputPassword1">Kode Rumah</label>
+                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kode/Inisial Rumah">
+                        </div>
+                        <div class="form-group">
+                            <label>Spesifikasi Rumah</label>
+                            <textarea class="form-control" rows="3" placeholder="Masukkan Spesifikasi..."></textarea>
                         </div>
                       </div>
-
+                      <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Tipe DP Rumah</label>
+                          <select class="form-control select2bs4" style="width: 100%;">
+                            <option>Presentase</option>
+                            <option>Nominal</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Harga Booking Rumah</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text">Rp.</span>
+                            </div>
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="form-group">
-                    <label>Bagian</label>
-                    <div class="select2-purple">
-                      <select class="select2" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                        <option>Keuangan</option>
-                        <option>Marketing</option>
-                      </select>
-                    </div>
-                    </div>
-
-
-
-
-                  </div>
-                  <div class="card-header">
-                    <h3 class="card-title"><i>Informasi Data Diri</i></h3><small class="text-danger float-right">*Tidak Wajib Diisi</small>
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Lengkap</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Lengkap">
+                      <label>Harga Rumah</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">Rp.</span>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Email">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No Hp</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan No Hp">
-                        </div>
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea class="form-control" rows="3" placeholder="Masukkan Alamat..."></textarea>
-                        </div>
+                        <input type="text" class="form-control">
                       </div>
                     </div>
-
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-success float-right">Simpan</button>
+                    <button type="submit" class="btn btn-info float-right">Submit</button>
                   </div>
                 </form>
               </div>

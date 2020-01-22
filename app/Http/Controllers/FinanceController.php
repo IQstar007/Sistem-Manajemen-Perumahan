@@ -11,6 +11,11 @@ class FinanceController extends Controller
   // $this->AdminAuthCheck();
     return view('finance.dashboard');
   }
+  public function transactionadd()
+  {
+  // $this->AdminAuthCheck();
+    return view('finance.transactionadd');
+  }
   public function transactionlist()
   {
   // $this->AdminAuthCheck();
@@ -20,6 +25,11 @@ class FinanceController extends Controller
   {
   // $this->AdminAuthCheck();
     return view('finance.transactionstage');
+  }
+  public function transactionedit()
+  {
+  // $this->AdminAuthCheck();
+    return view('finance.transactionedit');
   }
 
 }
